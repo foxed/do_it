@@ -22,21 +22,22 @@
     <!-- Add your site or application content here -->
     <div class="container">
       <div class="header">
-        <ul class="nav nav-pills pull-right">
-          <li class="active"><a ng-href="#">Home</a></li>
-          <li><a ng-href="#/about">About</a></li>
-          <li><a ng-href="#">Contact</a></li>
-        </ul>
         <h3 class="text-muted">doIt</h3>
-      </div>
+      <div ng-controller="MainCtrl" class="todo-container">
+        <span>{{todos.length}} todos remaining</span>
+        <a href="" ng-click="removeTodo()">remove checked items</a>
+        <ul ng-repeat="todo in todos" class="todo-form">
+          <input type="checkbox" ng-model="todo.done">
+          <span class="done-{{todo.done}}">{{todo.text}}</span>
+        </ul>
+      <form ng-submit="addTodo()" class="todo-form">
+        <input type="text" ng-model="todoText"  size="30" placeholder="add new todo here">
+        <input class="btn-primary" type="submit" value="add">
+      </form>
+    </div>
+  </div>
 
       <div ng-view=""></div>
-
-      <div class="footer">
-        <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
-      </div>
-    </div>
-
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
      <script>
