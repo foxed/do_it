@@ -30,6 +30,7 @@
         <h3 class="text-muted">doIt</h3>
       <div ng-controller="MainCtrl">
         <span>{{todos.length}} todos remaining</span>
+        <a href="" ng-click="removeTodo()">remove checked items</a>
         <ul ng-repeat="todo in todos" class="unstyled">
           <input type="checkbox" ng-model="todo.done">
           <span class="done-{{todo.done}}">{{todo.text}}</span>

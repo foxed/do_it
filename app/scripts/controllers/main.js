@@ -18,4 +18,12 @@ angular.module('doItApp')
      $scope.todos.push({text: $scope.todoText, done: false});
      $scope.todoText = '';
    };
-  });
+
+  $scope.removeTodo = function() {
+    var oldTodos = $scope.todos;
+    $scope.todos = [];
+    angular.forEach(oldTodos, function(todo) {
+      if (!todo.done) $scope.todos.push(todo);
+    });
+  };
+});
