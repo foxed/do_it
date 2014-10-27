@@ -33,7 +33,7 @@ body {
     line-height: 40px;
     padding-bottom: 19px;
   }
-}
+
 
 /* Custom page footer */
 .footer {
@@ -66,25 +66,19 @@ body {
   }
 }
 
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-  .container {
-    max-width: 730px;
-  }
+}
+// my own sass 
+.todo-container {
+  width: 500px;
+  height: 600px;
+  position: center;
+  border: 3px solid grey;
+  border-radius: 5px;
+  margin: 0 auto;
 
-  /* Remove the padding we set earlier */
-  .header,
-  .marketing,
-  .footer {
-    padding-left: 0;
-    padding-right: 0;
-  }
-  /* Space out the masthead */
-  .header {
-    margin-bottom: 30px;
-  }
-  /* Remove the bottom border on the jumbotron for visual effect */
-  .jumbotron {
-    border-bottom: 0;
+  .todo-form {
+    color: red;
+    padding: 50px;
   }
 }
+
